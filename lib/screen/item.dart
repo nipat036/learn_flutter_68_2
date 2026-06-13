@@ -17,8 +17,8 @@ class _ItemState extends State<Item> {
       itemBuilder: (context, index) {
         return Container(
           decoration: BoxDecoration(
-            border: Border.all(color: Colors.pinkAccent),
             borderRadius: BorderRadius.circular(10),
+            color: people[index].job.color,
           ),
           margin: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
           padding: EdgeInsets.all(40),
@@ -31,20 +31,29 @@ class _ItemState extends State<Item> {
                   children: [
                     Text(
                       "ชื่อ: ${people[index].name}",
-                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     Text(
                       "อายุ: ${people[index].age} ปี",
-                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     Text(
-                      "อาชีพ: ${people[index].job}",
-                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                      "อาชีพ: ${people[index].job.title}",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ],
                 ),
               ),
-              Icon(Icons.person, size: 50, color: Colors.pinkAccent),
+              Image.asset(people[index].job.image, width: 100, height: 100),
             ],
           ),
         );

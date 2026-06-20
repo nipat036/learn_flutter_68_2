@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:learn_flutter_68_2/model/person.dart';
 
+import '../main.dart';
+
 class AddForm extends StatefulWidget {
   const AddForm({super.key});
 
@@ -61,13 +63,14 @@ class _AddFormState extends State<AddForm> {
                 ),
                 DropdownButtonFormField<Job>(
                   decoration: InputDecoration(labelText: "Job"),
+                  initialValue: _job,
                   items: Job.values.map((key) {
                     return DropdownMenuItem(value: key, child: Text(key.title));
                   }).toList(),
                   value: _job,
                   onChanged: (value) {
                     setState(() {
-                      _job = value!;
+                      _job = value;
                     });
                   },
                 ),
@@ -83,6 +86,11 @@ class _AddFormState extends State<AddForm> {
                         people.add(Person(name: _name, age: _age, job: _job!));
                       });
                       _formKey.currentState!.reset();
+
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => MyApp()),
+                      );
                     }
                   },
                   style: FilledButton.styleFrom(

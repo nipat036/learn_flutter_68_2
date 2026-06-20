@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
+import 'package:learn_flutter_68_2/screen/home.dart';
+
 import 'package:learn_flutter_68_2/screen/item.dart';
+
+import 'package:learn_flutter_68_2/screen/addForm.dart';
 
 void main() {
   //const app = MaterialApp(title: 'หัวข้อ', home: Text(("Hello World")));
@@ -8,10 +12,10 @@ void main() {
 
   runApp(
     MaterialApp(
-      title: "My App",
+      title: "หัวข้อ",
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Home"),
+          title: const Text("หัวข้อ"),
           backgroundColor: Colors.pinkAccent,
           centerTitle: true,
         ), // AppBar
@@ -19,4 +23,18 @@ void main() {
       ), // Scaffold
     ), // MaterialApp
   );
+  // runApp(
+  //   MaterialApp(
+  //     title: "หัวข้อ",
+  //     home: Scaffold(
+  //       appBar: AppBar(
+  //         title: const Text("หัวข้อ"),
+  //         backgroundColor: Colors.pinkAccent,
+  //         centerTitle: true,
+  //       ), // AppBar
+  //       body: Item(),
+  //     ), // Scaffold
+  //   ), // MaterialApp
+  // );
+  runApp(AddForm());
 }
